@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* ---------------------- media query ---------------------- */
+/* #section1,
+ #section2,
+#section3, 
+#section4,
+#section5 {display: none;} */
+
+@media (max-width: 1280px) { /* 0 ~ 1280px */
+    .object .right h2 {font-size: 60px;}
+    .object .b-1 {left: 462px;}
+    .object .pencil {bottom: -77px;}
+}
+
+@media (max-width: 960px) { /* 0 ~ 960px */
+    .contact {height: 700px;}
+    .contact {padding: 100px 0 50px 0;}
+    .contact .left {margin: 30px;}
+    .contact .right {margin: 20px;}
+    .contact .right h2 {font-size: 35px;}
+    .object .pencil {width: 80px;}
+    .object .b-1 {left: 60px;}
+    .object .b-2 {display: none;}
+    .object .s-1 {left: 5px; bottom: 370px;}
+    .object .s-2 {display: none;}
+}
+
+@media (max-width: 768px) { /* 0 ~ 768px */
+  
+    .contact {height: 500px;}
+    .contact .left {display: inline-flexbox;}
+    .contact .right {flex: 10% 20% 20%; text-align: right;}
+    .contact .right h2 {text-align: right; font-size: 30px; font-weight: 100;}
+    .contact .right ul li {z-index: 1000;}
+}
+
+@media (max-width: 600px) { /* 0 ~ 600px */
+   
+    .contact .right h2 {font-size: 40px;}
+    .contact .right ul {font-size: 18px;}
+}
+
+@media (max-width: 480px) { /* 0 ~ 480px */
+    
+     .contact {height: 400px;}
+    .contact .right ul {font-size: 15px;}
+    .object .pencil {width: 120px; bottom: -30px;}
+    .object .b-1 {left: 332px; width: 70px;}
+    .object .b-2 {width: 70px;}
+    .object .s-3 {display: none;}
+}

@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/* webfont */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap');
+@font-face {font-family: 'S-CoreDream-2ExtraLight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'Cafe24Danjunghae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff'); font-weight: normal; font-style: normal;}
+@font-face {font-family: 'Cafe24Simplehae'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff') format('woff'); font-weight: normal; font-style: normal;}
+
+/* ---------------------- layout ---------------------- */
+#nav {position: relative;}
+#content{}
+#section1 {min-height: 100vh; background: #FEE050 url(../img/bg-blue.svg) no-repeat center top; background-size: cover;}
+#section1 svg {position: absolute; left: 0; top:0; animation: opening 1s linear; -webkit-animation: opening 1s linear;}
+#section2 {background: #19057A url(../img/bg-yellow.svg) no-repeat center top; background-size: cover;}
+
+@keyframes opening{
+    0% {transform: translateY(-200px);}
+    1000% {transform: translateY(0);}
+}
+
+-webkit-@keyframes opening{
+    0% {transform: translateY(-200px);}
+    1000% {transform: translateY(0);}
+}
+
+/* ---------------------- container ---------------------- */
+.container {width: 1400px; overflow: hidden; margin: 0 auto; position: relative; /* background: rgba(0,0,0,0.3); */}
+
+/* ---------------------- nav ---------------------- */
+.logo {position: absolute; left: 20px; display: none;}
+.nav {position: absolute; top: 25px; right: 90px; z-index: 1000;}
+.nav ul {text-align: center;}
+.nav li {display: inline-block; margin: 0 20px;}
+.nav li a {color: #fff; font-size: 22px; font-family: 'Roboto', sans-serif; transition: 0.5s all; text-shadow: #FEE050;}
+.nav li a:hover {color: #05B9CA;}
+.mNav {position: fixed; top: 20px; right: 30px; z-index: 1000;}
+.mNav .ham {display: block; position: absolute; width: 25px; height: 17px; right: 10px; top: 12px; cursor: pointer;}
+.mNav .ham span {position: absolute; display: block; width: 25px; height: 3px; background: #fff; transition: all 0.3s ease-in-out; z-index: 10000;}
+.mNav .ham span:nth-child(1) {top: 0;}
+.mNav .ham span:nth-child(2) {top: 50%;}
+.mNav .ham span:nth-child(3) {top: 100%;}
+.mNav .ham.active span:nth-child(1) {top: 50%; transform: rotate(45deg);}
+.mNav .ham.active span:nth-child(2) {opacity: 0;}
+.mNav .ham.active span:nth-child(3) {top: 50%; transform: rotate(-45deg);}
+.mNav .menu {position: fixed; width: 100%; height: 100vh; top: 0; right: -100%; background: #19057A; transition: 0.5s ease;}
+.mNav .menu.active {right: 0;}
+.mNav .menu .left {float: left; width: 50%; height: 100%; display: flex; align-items: center; justify-content: center;}
+.mNav .menu .left li {font-size: 98px; font-family: 'Playfair Display', serif; font-weight: 900;}
+.mNav .menu .left li a {color: #fff; transition: 0.5s ease;}
+.mNav .menu .left li:first-child a {color: #FEE050;}
+.mNav .menu .left li a:hover {color: #05B9CA;}
+.mNav .menu .left li.mob {display: none;}
+.mNav .menu .right {float: left; width: 50%; height: 100%; display: flex; align-items: left; justify-content: center; flex-direction: column;}
+.mNav .menu .right .top {padding-left: 30px;}
+.mNav .menu .right .top li {color: #fff; font-size: 26px; font-family: 'Cafe24Danjunghae';}
+.mNav .menu .right .bot {padding-left: 30px; margin-top: 30px;}
+.mNav .menu .right .bot li {display: inline-block; margin-right: 20px; font-size: 35px;}
+.mNav .menu .right .bot li a {color: #fff;}
+.mNav .menu .right .bot li a:hover {color: #FEE050;}
+
+/* ---------------------- section1 : home ---------------------- */
+.sec1 {text-align: center; color: #fff; display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column;}
+.sec1 .title-mob {display: none;}
+.sec1 .title {font-size: 200px; font-weight: 900; font-family: 'Righteous', cursive; position: relative; z-index: 1000; animation: title-slide 2s ease-in-out; -webkit-animation: title-slide 2s ease-in-out; z-index: 500;}
+@keyframes title-slide {
+    0% {opacity: 0; transform: translateY(-800px);}
+    50% {opacity: 0; transform: translateY(-800px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+-webkit-@keyframes title-slide {
+    0% {opacity: 0; transform: translateY(-800px);}
+    50% {opacity: 0; transform: translateY(-800px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+.sec1 .title .rainbow {animation: rainbow 1.5s ease-in-out infinite; -webkit-animation: rainbow 1.5s ease-in-out infinite; text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 10px 10px 0 rgba(0,0,0,0.2);}
+.sec1 .title .rainbow:nth-child(1) {color: #FEE050; z-index: 10; animation-delay: 0.5s; -webkit-animation-delay: 0.5s;}
+.sec1 .title .rainbow:nth-child(2) {color: #FD96B3; position: absolute; top: 0; right: 3px; animation-delay: 0.4s; -webkit-animation-delay: 0.4s;}
+.sec1 .title .rainbow:nth-child(3) {color: #05B9CA; position: absolute; top: 0; right: 6px; animation-delay: 0.3s; -webkit-animation-delay: 0.3s;}
+.sec1 .title .rainbow:nth-child(4) {color: #fff; position: absolute; top: 0; right: 9px;}
+@keyframes rainbow {
+    0%, 100% {transform: translateY(0.15em);}
+    50% {transform: translateY(-0.15em);}
+}
+-webkit-@keyframes rainbow {
+    0%, 100% {transform: translateY(0.15em);}
+    50% {transform: translateY(-0.15em);}
+}
+.sec1 p.desc {font-size: 25px; font-family: 'Roboto', sans-serif; font-weight:300; letter-spacing: 0.1px; color: #fff; animation: subtitle-show 2.5s ease-in-out; -webkit-animation: subtitle-show 2.5s ease-in-out;}
+@keyframes subtitle-show {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+-webkit-@keyframes subtitle-show {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.sec1 .object{position: relative;}
+.sec1 .object > img {position: absolute;}
+.sec1 .object .ob {z-index: 10; animation: shake-1 6s ease-in infinite; -webkit-animation: shake-1 6s ease-in infinite;}
+.sec1 .object .dot {z-index: 100;}
+.sec1 .object .b-1 {left: 400px; top: -400px;}
+.sec1 .object .b-2 {left: -750px; top: -700px;}
+.sec1 .object .s-1 {left: -690px; top: 300px; animation: shake-1 5s ease-in infinite; -webkit-animation: shake-1 5s ease-in infinite;}
+.sec1 .object .s-2 {left: -20px; top: -250px; animation: shake-2 3s ease-in infinite; -webkit-animation: shake-2 3s ease-in infinite;}
+.sec1 .object .s-3 {left: 100px; top: -450px; animation: shake-1 4s ease-in infinite; -webkit-animation: shake-1 4s ease-in infinite;}
+@keyframes shake-1 {
+    25% {transform: translate(-10px, 15px);}
+    75% {transform: translate(-10px, -15px);}
+}
+-webkit-@keyframes shake-1 {
+    25% {transform: translate(-10px, 15px);}
+    75% {transform: translate(-10px, -15px);}
+}
+@keyframes shake-2 {
+    25%{transform: translate(12px,7px);}
+    75% {transform: translate(12px, -7px);}
+}
+@keyframes shake-2 {
+    25%{transform: translate(12px,7px);}
+    75% {transform: translate(12px, -7px);}
+}
+/* ---------------------- section2 : about ---------------------- */
+.sec2 {padding: 250px 0 300px 0;}
+.sec2 h2{color: #19057A; text-align: center; font-size:70px; font-family: 'Playfair Display',serif; font-weight: 900; }
+.sec2 .object {height: 750px; position: relative; --x : 0; --y: 0; --d: 50; margin-top:30px;}
+.sec2 .object .pt{
+    position: absolute; z-index: 15;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+    transform: translate(calc(var(--x)/ var(--d) * 1px), calc(var(--y)/ var(--d) * 1px));
+    }
+.sec2 .object .pt > img{border: 5px solid #19057A; box-shadow: 20px 20px 0 0 #19057A;}
+.sec2 .object .p-1 {top: 60px; left: 30%;}
+.sec2 .object .p-1 >img{width: 200px; height: 200px; border-radius: 50%; top: -10px; left: -10px;}
+.sec2 .object .p-2 {top: 350px; left: 10%;}
+.sec2 .object .p-2 >img{width: 320px; height: 320px; top: -10px; left: 10px;}
+.sec2 .object .p-3 {top: 200px ; left: 67%;}
+.sec2 .object .p-3 >img{position: absolute; width: 230px; height: 460px; border-radius: 0 230px 230px 0; transform: rotate(-27deg); top: -20px; left: -20px;}
+.sec2 .object .p-4 {bottom: -200px; right: 20%;} 
+.sec2 .object .p-4 >img{ width: 180px; height: 200px; bottom: -15px; right: 10px; border-radius: 80px 90px 200px 180px / 200px;}
+.sec2 .object .ob {
+    position: absolute;
+    transition: transform 500ms cubic-bezier(0.25, 0.46 , 0.45 , 0.84);
+    transform: translate(calc(var(--x)/ var(--d) * 1px)* -2px), calc(var(--y)/ var(--d) * 1px)* -2px;
+}
+.sec2 .object .b-1 {top: 550px; left: 50%; position: relative;}
+.sec2 .object .b-2 {top: 280px; left: 22%;}
+.sec2 .object .b-3 {top: 100px; right: 10%;}
+.sec2 .object .b-4 {top: 500px; right: 5%;}
+.sec2 .object .dot {
+    position: absolute; z-index: 10;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
+    transform: translate(calc(var(--x) / var(--d) * 5px ), calc(var(--y) / var(--d) * 5px));
+}
+.sec2 .object .s-1 {top: 100px; left: 0;}
+.sec2 .object .s-2 {top: 550px; left: 35%;}
+.sec2 .object .s-3 {top: 60px; right: 2%;}
+
+.sec2 .object-fix {position: relative;}
+.sec2 .object-fix > img {position: absolute;}
+.sec2 .object-fix .s-4 {top: 350px; left: -50px; animation: shake-1 4s ease-in infinite;}
+.sec2 .object-fix .s-5 {top: 700px; left: -50px; animation: shake-2 3s ease-in infinite;}
+
+.sec2 .ment {height: auto;}
+.sec2 .ment p{position: relative; padding: 90px 230px; text-align: center; color: #19057A; font-size: 26px; font-family: 'Cafe24Simplehae'; font-weight: 900;}
+.sec2 .ment p span {font-size: 30px; color: #05B9CA;}
+.sec2 .ment p:before {position: absolute; content: ',,'; font-family: 'Palanquin',sans-serif; font-size: 200px; transform: rotate(180deg); top: 10px; left: 150px;}
+.sec2 .ment p:after{position: absolute; content: ',,'; font-family: 'Palanquin',sans-serif; font-size: 200px; bottom: 10px; right:150px;} 
+
+.sec2 .fitur {height: 400px;}
+.sec2 .fitur h3 {color: #19057A; text-align: center; font-size: 38px; font-family: 'Playfair Display',serif; font-weight: 900;}
+.sec2 .fitur .ability {float: left; width: 50%;}
+.sec2 .fitur .left .ab {padding: 20px 100px 20px 180px}
+.sec2 .fitur .right .ab {padding: 20px 100px 20px 180px}
+.sec2 .fitur .ability .progress-title {font-family: 'Playfair Display',serif; font-size: 30px; font-weight:  900px; color: #19057A; padding-bottom: 10px;}
+.sec2 .fitur .ability .progress {background-color: #fff; position: relative; border-radius: 20px; box-shadow: 5px 5px 0 0 #19057A; border: 5px solid #19057A;}
+.sec2 .fitur .ability .progress .progress-bar {position: relative; height: 15px; border-radius: 20px;}
+.sec2 .fitur .ability .progress .progress-bar:after{
+    content: '';
+    position: absolute; top: -12px; right: 0px;
+    background: #fff; height: 30px; width: 30px; border-radius: 50%; border: 5px solid #19057A;
+}
+/* scroll */
+.sec2 h2 {opacity: 0; translate: scale(0.8); transition: 0.5s ease-in;}
+.sec2.show h2{opacity: 1; transform: scale(1);}
+.sec2 .object{opacity: 0; transform: translateY(100px); transition: 1s 0.5s ease-in;}
+.sec2.show .object {opacity: 1; transform: translateY(0);}
+.sec2 .object .p-1 >img{opacity: 1; transform: rotate(-10deg); transition: 0.2s 1.9s ease-in;}
+.sec2.show .object .p-1 >img{opacity: 1; transform:rotate(0);}
+.sec2 .object .p-2 >img{opacity: 1; transform: rotate(5deg); transition: 0.2s 1.5s ease-in;}
+.sec2.show .object .p-2 >img{opacity: 1; transform: rotate(0);}
+.sec2 .object .p-3 >img{opacity: 0; transform: rotate(-3deg); transition: 0.2s 1.7s ease-in;}
+.sec2.show .object .p-3>img{opacity: 1; transform: rotate(0);}
+.sec2 .object .p-4 >img{opacity: 1; transform: rotate(-7deg); transition: 0.2s 2.1s ease-in;}
+.sec2.show .object .p-4>img{opacity: 1; transform: rotate(0);}
+.sec2 .ment {opacity: 0; transition: 0.7s ease-in;}
+.sec2 .ment.show {opacity: 1;}
+.sec2 .ment span.name{opacity: 0; transition: 0.5s 1s ease-in;}
+.sec2 .ment span.job {opacity: 0; transition: 0.5s 1s ease-in;}
+.sec2 .ment.show span.name{opacity: 1; color: #05B9CA;}
+.sec2 .ment.show span.job {opacity: 1; color: #05B9CA;}
